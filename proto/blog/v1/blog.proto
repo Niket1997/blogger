@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package blog.v1;
 
-option go_package = "github.com/Niket1997/blogger/blog/v1";
+option go_package = "github.com/Niket1997/blogger/blog/v1;blogv1";
 
 service BlogService {
-  rpc create(CreateBlogRequest) returns (BlogResponse);
-  rpc get(GetBlogRequest) returns (BlogResponse);
+  rpc Create(CreateBlogRequest) returns (BlogResponse);
+  rpc Get(GetBlogRequest) returns (BlogResponse);
   // TODO: can add multiple APIs here like getAllFromAuthor, getPopular, etc.
 }
 
