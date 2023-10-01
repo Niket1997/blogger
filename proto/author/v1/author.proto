@@ -5,8 +5,8 @@ package author.v1;
 option go_package = "github.com/Niket1997/blogger/author/v1;authorv1";
 
 service AuthorService {
-  rpc Create(CreateAuthorRequest) returns (AuthorResponse);
-  rpc Get(GetAuthorRequest) returns (AuthorResponse);
+  rpc Create(CreateAuthorRequest) returns (AuthorResponse) {}
+  rpc Get(GetAuthorRequest) returns (AuthorResponse) {}
 }
 
 message CreateAuthorRequest {
