@@ -5,12 +5,9 @@ import (
 
 	"connectrpc.com/connect"
 	blogv1 "github.com/Niket1997/blogger/gen/blog/v1"
-	"github.com/Niket1997/blogger/gen/blog/v1/blogv1connect"
 )
 
-type Server struct {
-	blogv1connect.UnimplementedBlogServiceHandler
-}
+type Server struct{}
 
 func NewServer() *Server {
 	return &Server{}
