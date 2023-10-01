@@ -35,5 +35,15 @@ func (s *Server) Get(
 	ctx context.Context,
 	req *connect.Request[authorv1.GetAuthorRequest],
 ) (*connect.Response[authorv1.AuthorResponse], error) {
-	panic("implement me")
+	log.Println("request received", req)
+	res := connect.NewResponse(&authorv1.AuthorResponse{
+		AuthorId:  "id12345",
+		Name:      "Niket",
+		EmailId:   "nik@gmail.com",
+		Bio:       "I'm awesome",
+		CreatedAt: 1,
+		UpdatedAt: 1,
+	})
+	res.Header().Set("Author-Version", "v1")
+	return res, nil
 }
