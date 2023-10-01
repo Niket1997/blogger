@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package author.v1;
+
+option go_package = "github.com/Niket1997/blogger/author/v1";
+
+service AuthorService {
+  rpc create(CreateAuthorRequest) returns (AuthorResponse);
+  rpc get(GetAuthorRequest) returns (AuthorResponse);
+}
+
+message CreateAuthorRequest {
+  string name = 1;
+  string email_id = 2;
+  string bio = 3;
+}
+
+message GetAuthorRequest {
+  string author_id = 1;
+}
+
+message AuthorResponse {
+  string author_id = 1;
+  string name = 2;
+  string email_id = 3;
+  string bio = 4;
+  int64 created_at = 5;
+  int64 updated_at = 6;
+}
